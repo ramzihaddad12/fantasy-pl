@@ -1,0 +1,67 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+    <div class = "nav-bar">
+      <%- include("./partials/nav.ejs") %>
+    </div>
+	
+    <div class="limiter">
+      <div class="container-table100">
+        <div class="wrap-table100">
+          <div class="table100">
+            <table>
+              <thead>
+                <tr class="table100-head">
+                  <th class="column1">Name</th>
+                  <th class="column2">Position</th>
+                </tr>
+              </thead>
+              <tbody>
+                    <% if (players.length > 0) { %>
+                    
+                
+                      <% players.forEach(player => { %>
+                
+                        <tr class='clickable' data-href='/<%= teamName %>/<%= player.player_name %>'>
+                          <!-- <tr> -->
+                            <td class="column1"><%= player.player_name %></td>
+                            <td class="column2"><%= player.player_position %></td>
+                          </tr>
+                          
+                        <!-- </tr> -->
+                        
+                
+                        <!-- <a href="/<%= teamName %>/<%= player.player_name %>">
+                          
+                          <h3><%= player.player_name %></h3>
+                          <h3><%= player.player_position %></h3>
+                        </a> -->
+                      <% }) %>
+                    <% } else { %>
+                      <p>There are no players to display...</p>
+                    <% } %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+<script>
+  var elements = document.getElementsByClassName('clickable');
+
+  for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      element.addEventListener('click', function() {
+          var href = this.dataset.href;
+          if (href) {
+              window.location.assign(href);
+          }
+      })
+    }
+</script>
+
+</html>

@@ -1,0 +1,44 @@
+<html lang="en">
+<!-- <link rel="stylesheet" type="text/css" href="/css/main.css"> -->
+<%- include("./partials/head.ejs") %>
+
+
+<body>
+  <div class = "nav-bar">
+    <%- include("./partials/nav.ejs") %>
+  </div>
+
+  <div class = "player-display">
+    <img title = <%= player.player_name %> src = "https://resources.premierleague.com/premierleague/photos/players/250x250/p80201.png" alt=<%= player.player_name %>> 
+  </div>
+  
+  <div class = "player-stats">
+    <h3>Name: <%= player.player_name %></h3>
+    <hr color="black">
+    <h3>Position: <%= player.player_position %></h3>
+    <hr color="black">
+
+    <h3>Cost: &pound<%= player.player_cost %>m</h3>
+    <hr color="black">
+
+    <h3>Status: <%= player.player_status %></h3>
+    <hr color="black">
+
+    <h3>Minutes played: <%= player.player_minutes %></h3>
+    <hr color="black">
+
+    <h3>Total points: <%= player.player_total_points %></h3>
+    <hr color="black">
+
+    <h3>Bonus points: <%= player.player_total_bonus %></h3>
+    <hr color="black">
+
+    <h3>Points per game: <%= player.player_points_per_game %></h3>
+    <hr color="black">
+
+    <h3>Selection percentage: <%= player.player_selection_percentage %>%</h3>
+    <hr color="black">
+
+  </div>
+</body>
+</html>
